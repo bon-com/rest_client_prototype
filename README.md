@@ -6,4 +6,5 @@ rest_prototypeをサーバー起動して実行する
  
  
 ### ◆インデックス
- - type1：REST APIクライアントにてJSON文字列を取得する方法
+ - type1：REST APIクライアントにてJSON文字列を取得する方法  
+ - type2：REST APIクライアントにてオブジェクトを取得する方法  
