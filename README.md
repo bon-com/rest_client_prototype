@@ -1,0 +1,2 @@
+# rest_client_prototype
+RestAPIに対してリクエストするクライアントメモ
