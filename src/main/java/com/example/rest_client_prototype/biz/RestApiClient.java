@@ -72,4 +72,16 @@ public class RestApiClient {
 		// https://example.com/api/resource/{id}/{name}など、プレースホルダの数だけ渡せる
 		restTemplate.put(url, requestBody, uriVariables);
 	}
+	
+	/**
+	 * DELETEリクエストを行う
+	 * @param url
+	 * @param uriVariables
+	 */
+	public void delete(String url, Object... uriVariables) {
+		// uriVariablesには可変引数が入る
+		// https://example.com/api/resource/{id}/{name}など、プレースホルダの数だけ渡せる
+		restTemplate.delete(url, uriVariables);
+	}
+	
 }

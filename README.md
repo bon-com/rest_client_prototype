@@ -13,6 +13,7 @@ rest_prototypeをサーバーに追加して起動しておく
  - type5：REST APIクライアントにて、postForLocationを使用してリソース作成後のロケーションURIのみ取得する方法
  - type6：REST APIクライアントにて、postForEntityを使用してPOSTリクエストした後、レスポンスエンティティを取得する方法 
  - type7：REST APIクライアントにて、putを使用してリソースを更新する方法
+ - type8：REST APIクライアントにて、deleteを使用してリソースを削除する方法
 
   
 ### ◆補足  
