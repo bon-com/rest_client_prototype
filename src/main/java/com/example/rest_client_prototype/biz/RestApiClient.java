@@ -16,7 +16,7 @@ public class RestApiClient {
 	private RestTemplate restTemplate;
 	
 	/**
-	 * GETリクエストを行ない、指定した型のレスポンスを受け取る
+	 * GETリクエストを行ない、指定した型のレスポンスを取得
 	 * @param <T>
 	 * @param url
 	 * @param responseType
@@ -29,7 +29,7 @@ public class RestApiClient {
 	}
 	
 	/**
-	 * GETリクエストを行ない、指定した型のレスポンスボディを保持するレスポンスエンティティを受け取る
+	 * GETリクエストを行ない、指定した型のレスポンスボディを保持するレスポンスエンティティを取得
 	 * @param <T>
 	 * @param url
 	 * @param responseType
@@ -51,4 +51,13 @@ public class RestApiClient {
 		return restTemplate.postForLocation(url, requestBody);
 	}
 
+	/**
+	 * POSTリクエストを行ない、レスポンスエンティティを取得
+	 * @param url
+	 * @param requestBody
+	 * @return ResponseEntity
+	 */
+	public ResponseEntity<Void> postJson(String url, Object requestBody) {
+		return restTemplate.postForEntity(url, requestBody, Void.class);
+	}
 }

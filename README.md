@@ -11,6 +11,7 @@ rest_prototypeをサーバーに追加して起動しておく
  - type3：REST APIクライアントにて、getForObjectを使用してオブジェクトリストを取得する方法  
  - type4：REST APIクライアントにて、getForEntityを使用してレスポンスエンティティを取得する方法
  - type5：REST APIクライアントにて、postForLocationを使用してリソース作成後のロケーションURIのみ取得する方法
+ - type6：REST APIクライアントにて、postForEntityを使用してPOSTリクエストした後、レスポンスエンティティを取得する方法 
 
   
 ### ◆補足  
@@ -31,6 +32,8 @@ Locationヘッダーにリソースの場所（URI）の設定と、
 build()は空のレスポンスボディを作成  
 という意味
 
+## type6 
+POSTリクエストした後、レスポンスヘッダーを取得したい時などに使用
 
 
 
