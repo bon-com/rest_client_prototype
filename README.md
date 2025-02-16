@@ -10,6 +10,7 @@ rest_prototypeをサーバーに追加して起動しておく
  - type2：REST APIクライアントにて、getForObjectを使用してオブジェクトを取得する方法 
  - type3：REST APIクライアントにて、getForObjectを使用してオブジェクトリストを取得する方法  
  - type4：REST APIクライアントにて、getForEntityを使用してレスポンスエンティティを取得する方法
+ - type5：REST APIクライアントにて、postForLocationを使用してリソース作成後のロケーションURIのみ取得する方法
 
   
 ### ◆補足  
@@ -21,5 +22,15 @@ GETリクエストを送信し、レスポンスボディを任意のオブジ�
 getForEntityを使用する  
 GETリクエストを送信し、ヘッダー情報を含むレスポンスボディ情報を取得する  
 例えばヘッダーにファイル名やロケーションURIが設定された際に、参照可能  
+
+## type5  
+POSTリクエスト先のAPIにて、リソース作成後に以下のようにLocationヘッダーを指定しているケースにて使用  
+[ResponseEntity.created(URI.create(resourceUri)).build();]  
+上記の記載は、HTTPレスポンスに201Createdステータスコードと、  
+Locationヘッダーにリソースの場所（URI）の設定と、  
+build()は空のレスポンスボディを作成  
+という意味
+
+
 
 
