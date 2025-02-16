@@ -15,6 +15,7 @@ rest_prototypeをサーバーに追加して起動しておく
  - type7：REST APIクライアントにて、putを使用してリソースを更新する方法
  - type8：REST APIクライアントにて、deleteを使用してリソースを削除する方法
  - type9：REST APIクライアントにて、exchangを使用してGET,POST,PUT,DELETEリクエストを行う方法
+ - type10：REST APIクライアントにて、UriComponentsBuilderを使用して動的にパスパラメータを作成する方法
 
   
 ### ◆補足  
