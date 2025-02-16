@@ -60,4 +60,16 @@ public class RestApiClient {
 	public ResponseEntity<Void> postJson(String url, Object requestBody) {
 		return restTemplate.postForEntity(url, requestBody, Void.class);
 	}
+	
+	/**
+	 * PUTリクエストを行う
+	 * @param url
+	 * @param requestBody
+	 * @param uriVariables
+	 */
+	public void put(String url, Object requestBody, Object... uriVariables) {
+		// uriVariablesには可変引数が入る
+		// https://example.com/api/resource/{id}/{name}など、プレースホルダの数だけ渡せる
+		restTemplate.put(url, requestBody, uriVariables);
+	}
 }
