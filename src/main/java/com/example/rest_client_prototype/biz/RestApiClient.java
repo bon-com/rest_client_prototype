@@ -1,6 +1,7 @@
 package com.example.rest_client_prototype.biz;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -20,8 +21,21 @@ public class RestApiClient {
 	 * @return
 	 */
 	public <T> T getJson(String url, Class<T> responseType) {
-        // レスポンスを String 型で取得
+        // レスポンスを指定したresponseTypeの型で取得
         return restTemplate.getForObject(url, responseType);
 		
 	}
+	
+	/**
+	 * GETリクエストを行ない、指定した型のレスポンスボディを保持するレスポンスエンティティを受け取る
+	 * @param <T>
+	 * @param url
+	 * @param responseType
+	 * @return
+	 */
+	public <T> ResponseEntity<T> getJsonEntity(String url, Class<T> responseType) {
+	    // 指定した responseType の型でレスポンスを取得
+	    return restTemplate.getForEntity(url, responseType);
+	}
+
 }
