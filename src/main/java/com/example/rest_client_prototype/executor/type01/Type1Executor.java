@@ -14,9 +14,9 @@ public class Type1Executor {
 			var restApiClient = context.getBean(RestApiClient.class);
 			
 			// 戻り値にString文字列を指定
-			String jsonRes = restApiClient.getJson("http://localhost:8080/rest_prototype/type1/1", String.class);
+			String resJson = restApiClient.getJson("http://localhost:8080/rest_prototype/type1/1", String.class);
 			
-			System.out.println(jsonRes);
+			System.out.println(resJson);
 		}
 	}
 }

@@ -3,6 +3,7 @@ package com.example.rest_client_prototype.biz;
 import java.net.URI;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -83,5 +84,17 @@ public class RestApiClient {
 		// https://example.com/api/resource/{id}/{name}など、プレースホルダの数だけ渡せる
 		restTemplate.delete(url, uriVariables);
 	}
+	
+	/**
+	 * 汎用的な記載にしてGET,POST,PUT,DELETEリクエストを行う
+	 * @param <T>
+	 * @param requestEntity
+	 * @param responseType
+	 * @return
+	 */
+    public <T> ResponseEntity<T> exchange(RequestEntity<?> requestEntity, Class<T> responseType) {
+        return restTemplate.exchange(requestEntity, responseType);
+    }
+	
 	
 }

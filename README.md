@@ -14,6 +14,7 @@ rest_prototypeをサーバーに追加して起動しておく
  - type6：REST APIクライアントにて、postForEntityを使用してPOSTリクエストした後、レスポンスエンティティを取得する方法 
  - type7：REST APIクライアントにて、putを使用してリソースを更新する方法
  - type8：REST APIクライアントにて、deleteを使用してリソースを削除する方法
+ - type9：REST APIクライアントにて、exchangを使用してGET,POST,PUT,DELETEリクエストを行う方法
 
   
 ### ◆補足  
@@ -37,5 +38,9 @@ build()は空のレスポンスボディを作成
 ## type6 
 POSTリクエストした後、レスポンスヘッダーを取得したい時などに使用
 
+## type9 
+exchangeを使用する  
+RequestEntityと取得したい戻り値の型を指定し、その戻り値の型をボディに保持するResponseEntityを返却する  
+汎用的にメソッドを作成することができる
 
 
