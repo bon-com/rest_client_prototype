@@ -58,7 +58,7 @@ public class Type9Executor {
 					.header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
 					.build();
 			ResponseEntity<Void> resEntity5 = restApiClient.exchange(reqEntity5, Void.class);
-			System.out.println("\n★★削除結果結果★★:\n" + resEntity5 + "\n");
+			System.out.println("\n★★削除結果★★:\n" + resEntity5 + "\n");
 			
 		}
 	}

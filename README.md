@@ -17,6 +17,7 @@ rest_prototypeをサーバーに追加して起動しておく
  - type9：REST APIクライアントにて、exchangを使用してGET,POST,PUT,DELETEリクエストを行う方法
  - type10：REST APIクライアントにて、UriComponentsBuilderを使用して動的にパスパラメータを作成する方法
  - type11：REST APIクライアントにて、UriComponentsBuilderを使用して動的にクエリパラメータを作成する方法
+ - type12：REST APIクライアントにて、exchangを使用してさらに汎用的にGET,POST,PUT,DELETEメソッドの呼び出しを行う方法
 
   
 ### ◆補足  
@@ -45,4 +46,7 @@ exchangeを使用する
 RequestEntityと取得したい戻り値の型を指定し、その戻り値の型をボディに保持するResponseEntityを返却する  
 汎用的にメソッドを作成することができる
 
-
+## type12 
+exchangeを使用する　　
+リクエストヘッダーに共通した設定が存在する場合、  
+RequestEntity自体を隠蔽する
