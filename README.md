@@ -18,6 +18,7 @@ rest_prototypeをサーバーに追加して起動しておく
  - type10：REST APIクライアントにて、UriComponentsBuilderを使用して動的にパスパラメータを作成する方法
  - type11：REST APIクライアントにて、UriComponentsBuilderを使用して動的にクエリパラメータを作成する方法
  - type12：REST APIクライアントにて、exchangを使用してさらに汎用的にGET,POST,PUT,DELETEメソッドの呼び出しを行う方法
+ - type13：REST APIクライアントにて、RestTemplateメソッドの例外ハンドリングする方法
 
   
 ### ◆補足  
@@ -47,6 +48,11 @@ RequestEntityと取得したい戻り値の型を指定し、その戻り値の�
 汎用的にメソッドを作成することができる
 
 ## type12 
-exchangeを使用する　　
+exchangeを使用する  
 リクエストヘッダーに共通した設定が存在する場合、  
 RequestEntity自体を隠蔽する
+
+## type13 
+RestTemplate実行時の4xx系と5xx系のエラーハンドリング方法  
+4xx系：HttpClientErrorExceptionがスローされる  
+5xx系：HttpServerErrorExceptionがスローされる
