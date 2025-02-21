@@ -19,6 +19,7 @@ rest_prototypeをサーバーに追加して起動しておく
  - type11：REST APIクライアントにて、UriComponentsBuilderを使用して動的にクエリパラメータを作成する方法
  - type12：REST APIクライアントにて、exchangを使用してさらに汎用的にGET,POST,PUT,DELETEメソッドの呼び出しを行う方法
  - type13：REST APIクライアントにて、RestTemplateメソッドの例外ハンドリングする方法
+ - type14：REST APIクライアントにて、POSTリクエストする際、値が設定されていないフィールドをJSONに含めない方法
  - 共通機能01：REST APIクライアントにて、JSONをログに出力する方法
 
   
