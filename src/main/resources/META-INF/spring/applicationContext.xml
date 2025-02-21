@@ -8,6 +8,15 @@
 
 	<!-- コンポーネントスキャン -->
 	<context:component-scan base-package="com.example.rest_client_prototype.biz" />
+	<!-- LoggingInterceptor の Bean 定義 -->
+	<bean id="restApiClientInterceptor" class="com.example.rest_client_prototype.common.interceptor.RestApiClientInterceptor" />
+	
 	<!-- RestTemplate の Bean 定義 -->
-	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate" />
+	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+		<property name="interceptors">
+			<list>
+				<ref bean="restApiClientInterceptor" />
+			</list>
+		</property>
+    </bean>
 </beans>

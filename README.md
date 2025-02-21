@@ -19,6 +19,7 @@ rest_prototypeをサーバーに追加して起動しておく
  - type11：REST APIクライアントにて、UriComponentsBuilderを使用して動的にクエリパラメータを作成する方法
  - type12：REST APIクライアントにて、exchangを使用してさらに汎用的にGET,POST,PUT,DELETEメソッドの呼び出しを行う方法
  - type13：REST APIクライアントにて、RestTemplateメソッドの例外ハンドリングする方法
+ - 共通機能01：REST APIクライアントにて、JSONをログに出力する方法
 
   
 ### ◆補足  
@@ -56,3 +57,8 @@ RequestEntity自体を隠蔽する
 RestTemplate実行時の4xx系と5xx系のエラーハンドリング方法  
 4xx系：HttpClientErrorExceptionがスローされる  
 5xx系：HttpServerErrorExceptionがスローされる
+
+## 共通01
+ClientHttpRequestInterceptorの機能を使用して  
+RestTemplateのリクエスト前後にログ出力処理を入れる  
+ログライブラリの依存資材が必要
