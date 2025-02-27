@@ -1,8 +1,10 @@
 package com.example.rest_client_prototype.executor.type04;
 
-import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.client.utils.URLEncodedUtils;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -33,8 +35,7 @@ public class Type4Executor {
 
 			// ヘッダーのContent-Dispositionからファイル名を取得
 			String contentDisposition = headers.getFirst(HttpHeaders.CONTENT_DISPOSITION);
-			String encodeFileName = contentDisposition.replaceFirst("(?i)^.*filename=\"?([^\"]+)\"?.*$", "$1");
-			String fileName = URLDecoder.decode(encodeFileName, StandardCharsets.UTF_8); // URLデコードされたファイル名
+			String fileName = getFileName(contentDisposition);
 
 			// ヘッダーのContent-typeを取得
 			MediaType contentType = headers.getContentType(); // application/xml など
@@ -49,5 +50,21 @@ public class Type4Executor {
 			byte[] xmlBody = resEntity.getBody();
 
 		}
+	}
+
+	private static String getFileName(String contentDisposition) {
+		if (contentDisposition == null) {
+			return null;
+		}
+
+		List<NameValuePair> params = URLEncodedUtils.parse(contentDisposition, StandardCharsets.UTF_8);
+		for (NameValuePair param : params) {
+		    if ("filename".equalsIgnoreCase(param.getName()) || "filename*".equalsIgnoreCase(param.getName())) {
+		        // 余計なダブルクォートを削除して返す
+		        return param.getValue().replace("\"", "");
+		    }
+		}
+		
+		return null;
 	}
 }
