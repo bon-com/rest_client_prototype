@@ -24,7 +24,7 @@ rest_prototypeをサーバーに追加して起動しておく
  - 共通機能01：RestTemplateを使用して、JSONをログに出力する方法
  
 ## ◇WebClient
- - type15：WebClientを使用して、GET通信を行う方法
+ - type15：WebClientを使用して、GET通信でJSON文字列を取得する方法
   
 ### ◆補足  
 ## type1  
@@ -68,4 +68,11 @@ RestTemplateのリクエスト前後にログ出力処理を入れる
 ログライブラリの依存資材が必要
 
 ## type15
-WebClientを使用するには、spring-webfluxライブラリを導入する
+RestTemplateは今後廃止される予定  
+これからはWebClientを使用する  
+WebClientは基本的に非同期通信を行うために設計されているが、同期通信も可能
+WebClientを使用するためには、  
+spring-webfluxライブラリ等を導入する  
+Bean定義する（今回XMLベースでBean定義がなかなかうまくいかなかったため、Javaアノテーションベースにした）  
+
+

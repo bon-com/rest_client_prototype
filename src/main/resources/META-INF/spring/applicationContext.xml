@@ -8,9 +8,10 @@
 
 	<!-- コンポーネントスキャン -->
 	<context:component-scan base-package="com.example.rest_client_prototype.biz" />
+
+	<!-- RestTemplateまわりの設定 ※RestTemplateは今後、非推奨になる模様 ※Spring6系ではまだ使用は可能 -->
 	<!-- LoggingInterceptor の Bean 定義 -->
 	<bean id="restApiClientInterceptor" class="com.example.rest_client_prototype.common.interceptor.RestApiClientInterceptor" />
-	
 	<!-- RestTemplate の Bean 定義 -->
 	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
 		<property name="interceptors">
@@ -18,5 +19,9 @@
 				<ref bean="restApiClientInterceptor" />
 			</list>
 		</property>
-    </bean>
+	</bean>
+
+	<!-- WebClientのアノテーションベースのBean定義 -->
+	<bean class="com.example.rest_client_prototype.common.config.WebClientConfig" />
+
 </beans>
