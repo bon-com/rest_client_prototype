@@ -25,7 +25,7 @@ public class RestApiClientInterceptor implements ClientHttpRequestInterceptor {
 	public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution)
 			throws IOException {
 		// リクエスト内容をログ出力
-		logger.debug("----------★★RestApiClient.java★★----------\n" +
+		logger.info("----------★★RestApiClient.java★★----------\n" +
 				"★Request URI: {}\n" +
 				"★Request Method: {}\n" +
 				"★Request Headers: {}\n" +
@@ -45,7 +45,7 @@ public class RestApiClientInterceptor implements ClientHttpRequestInterceptor {
 
 		// レスポンス内容をログ出力
 		String responseBody = new String(bodyBytes, StandardCharsets.UTF_8);
-		logger.debug("----------★★RestApiClient.java★★----------\n" +
+		logger.info("----------★★RestApiClient.java★★----------\n" +
 				"★Response Status Code: {}\n" +
 				"★Response Headers: {}\n" +
 				"★Response Body: {}",
