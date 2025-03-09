@@ -13,7 +13,7 @@ import com.example.rest_client_prototype.biz.RestApiClient;
 import com.example.rest_client_prototype.resources.Resource;
 
 /**
- * REST APIクライアントにて、exchangを使用してさらに汎用的にGET,POST,PUT,DELETEメソッドの呼び出しを行う方法  
+ * RestTemplateを使用して、exchangを使用してさらに汎用的にGET,POST,PUT,DELETEメソッドの呼び出しを行う方法  
  */
 public class Type12Executor {
 

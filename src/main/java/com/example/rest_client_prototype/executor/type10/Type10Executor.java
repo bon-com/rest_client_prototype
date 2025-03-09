@@ -12,7 +12,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import com.example.rest_client_prototype.biz.RestApiClient;
 
 /**
- * REST APIクライアントにて、UriComponentsBuilderを使用して動的にパスパラメータを作成する方法
+ * RestTemplateを使用して、UriComponentsBuilderを使用して動的にパスパラメータを作成する方法
  */
 public class Type10Executor {
 

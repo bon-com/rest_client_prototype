@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 /**
- * Rest APIを呼び出すクライアント
+ * RestTemplateを使用したAPI疎通クラス
  */
 @Component
 public class RestApiClient {

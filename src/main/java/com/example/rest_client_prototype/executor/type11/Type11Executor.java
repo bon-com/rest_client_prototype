@@ -14,7 +14,7 @@ import com.example.rest_client_prototype.biz.RestApiClient;
 import com.example.rest_client_prototype.resources.Resource;
 
 /**
- * REST APIクライアントにて、UriComponentsBuilderを使用して動的にクエリパラメータを作成する方法
+ * RestTemplateを使用して、UriComponentsBuilderを使用して動的にクエリパラメータを作成する方法
  */
 public class Type11Executor {
 

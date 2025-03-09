@@ -8,7 +8,7 @@ import com.example.rest_client_prototype.biz.RestApiClient;
 import com.example.rest_client_prototype.resources.Resource;
 
 /**
- * REST APIクライアントにて、putを使用してリソースを更新する方法
+ * RestTemplateを使用して、putを使用してリソースを更新する方法
  */
 public class Type7Executor {
 

@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.example.rest_client_prototype.biz.RestApiClient;
 
 /**
- * REST APIクライアントにて、deleteを使用してリソースを削除する方法
+ * RestTemplateを使用して、deleteを使用してリソースを削除する方法
  */
 public class Type8Executor {
 

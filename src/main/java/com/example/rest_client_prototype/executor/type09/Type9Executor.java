@@ -14,7 +14,7 @@ import com.example.rest_client_prototype.biz.RestApiClient;
 import com.example.rest_client_prototype.resources.Resource;
 
 /**
- * REST APIクライアントにて、exchangを使用してGET,POST,PUT,DELETEリクエストを行う方法
+ * RestTemplateを使用して、exchangを使用してGET,POST,PUT,DELETEリクエストを行う方法
  */
 public class Type9Executor {
 

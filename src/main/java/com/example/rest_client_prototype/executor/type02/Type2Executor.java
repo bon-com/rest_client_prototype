@@ -6,7 +6,7 @@ import com.example.rest_client_prototype.biz.RestApiClient;
 import com.example.rest_client_prototype.resources.Resource;
 
 /**
- * REST APIクライアントにて、getForObjectを使用してオブジェクトを取得する方法  
+ * RestTemplateを使用して、getForObjectを使用してオブジェクトを取得する方法  
  */
 public class Type2Executor {
 

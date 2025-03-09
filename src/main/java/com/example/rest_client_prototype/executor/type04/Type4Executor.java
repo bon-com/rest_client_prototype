@@ -14,7 +14,7 @@ import org.springframework.http.ResponseEntity;
 import com.example.rest_client_prototype.biz.RestApiClient;
 
 /**
- * REST APIクライアントにて、getForEntityを使用してレスポンスエンティティを取得する方法
+ * RestTemplateを使用して、getForEntityを使用してレスポンスエンティティを取得する方法
  * XMLファイルダウンロードAPI呼び出しなど  
  */
 public class Type4Executor {

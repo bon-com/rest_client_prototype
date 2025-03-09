@@ -6,22 +6,25 @@ rest_prototypeをサーバーに追加して起動しておく
  
  
 ### ◆インデックス
- - type1：REST APIクライアントにて、getForObjectを使用してJSON文字列を取得する方法  
- - type2：REST APIクライアントにて、getForObjectを使用してオブジェクトを取得する方法 
- - type3：REST APIクライアントにて、getForObjectを使用してオブジェクトリストを取得する方法  
- - type4：REST APIクライアントにて、getForEntityを使用してレスポンスエンティティを取得する方法
- - type5：REST APIクライアントにて、postForLocationを使用してリソース作成後のロケーションURIのみ取得する方法
- - type6：REST APIクライアントにて、postForEntityを使用してPOSTリクエストした後、レスポンスエンティティを取得する方法 
- - type7：REST APIクライアントにて、putを使用してリソースを更新する方法
- - type8：REST APIクライアントにて、deleteを使用してリソースを削除する方法
- - type9：REST APIクライアントにて、exchangを使用してGET,POST,PUT,DELETEリクエストを行う方法
- - type10：REST APIクライアントにて、UriComponentsBuilderを使用して動的にパスパラメータを作成する方法
- - type11：REST APIクライアントにて、UriComponentsBuilderを使用して動的にクエリパラメータを作成する方法
- - type12：REST APIクライアントにて、exchangを使用してさらに汎用的にGET,POST,PUT,DELETEメソッドの呼び出しを行う方法
- - type13：REST APIクライアントにて、RestTemplateメソッドの例外ハンドリングする方法
- - type14：REST APIクライアントにて、POSTリクエストする際、値が設定されていないフィールドをJSONに含めない方法
- - 共通機能01：REST APIクライアントにて、JSONをログに出力する方法
-
+## ◇RestTemplate
+ - type1：RestTemplateを使用して、getForObjectを使用してJSON文字列を取得する方法  
+ - type2：RestTemplateを使用して、getForObjectを使用してオブジェクトを取得する方法 
+ - type3：RestTemplateを使用して、getForObjectを使用してオブジェクトリストを取得する方法  
+ - type4：RestTemplateを使用して、getForEntityを使用してレスポンスエンティティを取得する方法
+ - type5：RestTemplateを使用して、postForLocationを使用してリソース作成後のロケーションURIのみ取得する方法
+ - type6：RestTemplateを使用して、postForEntityを使用してPOSTリクエストした後、レスポンスエンティティを取得する方法 
+ - type7：RestTemplateを使用して、putを使用してリソースを更新する方法
+ - type8：RestTemplateを使用して、deleteを使用してリソースを削除する方法
+ - type9：RestTemplateを使用して、exchangを使用してGET,POST,PUT,DELETEリクエストを行う方法
+ - type10：RestTemplateを使用して、UriComponentsBuilderを使用して動的にパスパラメータを作成する方法
+ - type11：RestTemplateを使用して、UriComponentsBuilderを使用して動的にクエリパラメータを作成する方法
+ - type12：RestTemplateを使用して、exchangを使用してさらに汎用的にGET,POST,PUT,DELETEメソッドの呼び出しを行う方法
+ - type13：RestTemplateを使用して、RestTemplateメソッドの例外ハンドリングする方法
+ - type14：RestTemplateを使用して、POSTリクエストする際、値が設定されていないフィールドをJSONに含めない方法
+ - 共通機能01：RestTemplateを使用して、JSONをログに出力する方法
+ 
+## ◇WebClient
+ - type15：WebClientを使用して、GET通信を行う方法
   
 ### ◆補足  
 ## type1  
@@ -63,3 +66,6 @@ RestTemplate実行時の4xx系と5xx系のエラーハンドリング方法
 ClientHttpRequestInterceptorの機能を使用して  
 RestTemplateのリクエスト前後にログ出力処理を入れる  
 ログライブラリの依存資材が必要
+
+## type15
+WebClientを使用するには、spring-webfluxライブラリを導入する

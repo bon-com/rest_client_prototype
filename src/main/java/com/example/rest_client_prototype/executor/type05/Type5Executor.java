@@ -9,7 +9,7 @@ import com.example.rest_client_prototype.biz.RestApiClient;
 import com.example.rest_client_prototype.resources.Resource;
 
 /**
- * REST APIクライアントにて、postForLocationを使用してPOSTリクエストした後、リソース作成後のロケーションURIのみ取得する方法  
+ * RestTemplateを使用して、postForLocationを使用してPOSTリクエストした後、リソース作成後のロケーションURIのみ取得する方法  
  */
 public class Type5Executor {
 

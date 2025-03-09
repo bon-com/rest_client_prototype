@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.example.rest_client_prototype.biz.RestApiClient;
 
 /**
- * REST APIクライアントにて、getForObjectを使用してJSON文字列を取得する方法  
+ * RestTemplateを使用して、getForObjectを使用してJSON文字列を取得する方法  
  */
 public class Type1Executor {
 

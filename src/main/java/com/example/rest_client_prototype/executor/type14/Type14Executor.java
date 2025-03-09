@@ -8,7 +8,7 @@ import com.example.rest_client_prototype.resources.Resource;
 import com.example.rest_client_prototype.resources.Resource2;
 
 /**
- * REST APIクライアントにて、POSTリクエストする際、値が設定されていないフィールドをJSONに含めない方法  
+ * RestTemplateを使用して、POSTリクエストする際、値が設定されていないフィールドをJSONに含めない方法  
  */
 public class Type14Executor {
 

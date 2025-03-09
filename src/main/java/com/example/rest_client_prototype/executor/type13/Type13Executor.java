@@ -8,7 +8,7 @@ import org.springframework.web.client.HttpServerErrorException;
 import com.example.rest_client_prototype.biz.RestApiClient;
 
 /**
- * REST APIクライアントにて、例外ハンドリングする方法
+ * RestTemplateを使用して、例外ハンドリングする方法
  */
 public class Type13Executor {
 

@@ -9,7 +9,7 @@ import com.example.rest_client_prototype.biz.RestApiClient;
 import com.example.rest_client_prototype.resources.Resource;
 
 /**
- * REST APIクライアントにて、postForEntityを使用してPOSTリクエストした後、レスポンスエンティティを取得する方法  
+ * RestTemplateを使用して、postForEntityを使用してPOSTリクエストした後、レスポンスエンティティを取得する方法  
  */
 public class Type6Executor {
 
