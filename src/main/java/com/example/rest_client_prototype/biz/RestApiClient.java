@@ -4,6 +4,7 @@ import java.net.URI;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
@@ -142,4 +143,44 @@ public class RestApiClient {
 		return restTemplate.exchange(requestEntity, responseType);
 	}
 
+	/**
+	 * さらに汎用的な記載にしてGET,POST,PUT,DELETEリクエストを行う
+	 * リクエストヘッダーなどに共通した値を設定する場合、RequestEntityの設定を隠蔽する
+	 * @param <T>
+	 * @param url URIテンプレート
+	 * @param method HTTPメソッド
+	 * @param body リクエストボディ
+	 * @param responseType レスポンスの型 リストやマップなどジェネリクスを含むケース
+	 * @param queryParams クエリパラメータマップ
+	 * @param uriVariables パスパラメータ可変長
+	 * @return responseTypeに指定した型のボディを保持するResponseEntity
+	 */
+	public <T> ResponseEntity<T> exchange(String url, HttpMethod method, Object body, ParameterizedTypeReference<T> responseType,
+			Map<String, String> queryParams, Object... uriVariables) {
+
+		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(url);
+
+		// クエリパラメータ設定
+		if (queryParams != null) {
+			for (Map.Entry<String, String> entry : queryParams.entrySet()) {
+				builder.queryParam(entry.getKey(), entry.getValue());
+			}
+		}
+
+		// 最終的にURIを取得
+		URI uri = builder.buildAndExpand(uriVariables) // パスパラメータ設定
+				.encode() // URIエンコード
+				.toUri();
+
+		// RequestEntityを共通化
+		RequestEntity<Object> requestEntity = RequestEntity
+				.method(method, uri)
+				.contentType(MediaType.APPLICATION_JSON)
+				.header(HttpHeaders.AUTHORIZATION, "Bearer token") // Authorizationヘッダーを設定したり
+				.header("Custom-Header", "CustomValue") // カスタムヘッダーを設定したり
+				.body(body);
+
+		// exchangeメソッドでリクエストを送信し、ResponseEntityを返却
+		return restTemplate.exchange(requestEntity, responseType);
+	}
 }

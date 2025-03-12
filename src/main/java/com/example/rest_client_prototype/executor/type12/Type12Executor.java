@@ -1,11 +1,10 @@
 package com.example.rest_client_prototype.executor.type12;
 
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 
@@ -26,14 +25,18 @@ public class Type12Executor {
 					HttpMethod.GET, null, String.class, null, new Object[] { "3" });
 			System.out.println("★★json文字列★★:\n" + resEntity);
 
-			// READ（getメソッド）
-			Map<String, String> queryParams = new HashMap<>();
-			queryParams.put("name", "ご");
-			ResponseEntity<Resource[]> resEntity2 = restApiClient.exchange(
+			// READ（getメソッド） リストで取得する
+//			Map<String, String> queryParams = new HashMap<>();
+//			queryParams.put("name", "ご");
+//			ResponseEntity<Resource[]> resEntity2 = restApiClient.exchange(
+//					"http://localhost:8080/rest_prototype/type5/",
+//					HttpMethod.GET, null, Resource[].class, queryParams, new Object[0]);
+//			System.out.println("\n★★オブジェクトリスト★★:");
+//			Arrays.stream(resEntity2.getBody()).forEach(r -> System.out.println(r));
+			ResponseEntity<List<Resource>> resEntity2 = restApiClient.exchange(
 					"http://localhost:8080/rest_prototype/type5/",
-					HttpMethod.GET, null, Resource[].class, queryParams, new Object[0]);
-			System.out.println("\n★★オブジェクトリスト★★:");
-			Arrays.stream(resEntity2.getBody()).forEach(r -> System.out.println(r));
+					HttpMethod.GET, null, new ParameterizedTypeReference<List<Resource>>() {}, null, new Object[0]);
+			resEntity2.getBody().forEach(r -> System.out.println(r));
 
 			// CREATE（postメソッド）
 			var reqBodyC = new Resource("4", "パスタ", LocalDate.of(2022, 5, 1));
