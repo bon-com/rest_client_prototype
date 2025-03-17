@@ -25,7 +25,9 @@ rest_prototypeをサーバーに追加して起動しておく
  
 ## ◇WebClient
  - type15：WebClientを使用して、GET通信でJSON文字列を取得する方法
-  
+ - type16：WebClientを使用して、GET通信でオブジェクトを取得する方法 
+ 
+ 
 ### ◆補足  
 ## type1  
 getForObjectを使用する  
@@ -55,7 +57,8 @@ RequestEntityと取得したい戻り値の型を指定し、その戻り値の�
 ## type12 
 exchangeを使用する  
 リクエストヘッダーに共通した設定が存在する場合、  
-RequestEntity自体を隠蔽する
+RequestEntity自体を隠蔽する  
+戻り値の型にListやMapなどジェネリクスを含むケースも取得可能にした
 
 ## type13 
 RestTemplate実行時の4xx系と5xx系のエラーハンドリング方法  
