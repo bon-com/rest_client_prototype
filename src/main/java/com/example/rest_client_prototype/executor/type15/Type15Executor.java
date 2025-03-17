@@ -8,7 +8,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import com.example.rest_client_prototype.biz.WebApiClient;
 
 /**
- * WebClientを使用してJSON文字列を取得する方法  
+ * WebClientを使用してGET通信する方法 
  */
 public class Type15Executor {
 

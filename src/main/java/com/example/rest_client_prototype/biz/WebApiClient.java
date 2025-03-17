@@ -3,6 +3,7 @@ package com.example.rest_client_prototype.biz;
 import java.net.URI;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -41,4 +42,19 @@ public class WebApiClient {
                 .bodyToMono(responseType)  // レスポンスボディを指定した型で受け取る
                 .block();  // 同期的に結果を取得
 	}
+	
+	/**
+	 * GETリクエストを行ない、指定した型のレスポンスを取得（ジェネリクスを含む）
+	 * ParameterizedTypeReferenceを渡すと、戻り値は引数で指定したTとなる
+	 * @param uri
+	 * @param responseType
+	 * @return
+	 */
+    public <T> T getJson(URI uri, ParameterizedTypeReference<T> responseType) {
+        return webClient.get()
+                .uri(uri)
+                .retrieve()
+                .bodyToMono(responseType)
+                .block();
+    }
 }

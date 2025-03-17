@@ -26,6 +26,7 @@ rest_prototypeをサーバーに追加して起動しておく
 ## ◇WebClient
  - type15：WebClientを使用して、GET通信でJSON文字列を取得する方法
  - type16：WebClientを使用して、GET通信でオブジェクトを取得する方法 
+ - type17：WebClientを使用して、GET通信でリストを取得する方法 
  
  
 ### ◆補足  
