@@ -1,6 +1,7 @@
 package com.example.rest_client_prototype.biz;
 
 import java.net.URI;
+import java.util.Collections;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -115,7 +116,7 @@ public class RestApiClient {
 	 * @return responseTypeに指定した型のボディを保持するResponseEntity
 	 */
 	public <T> ResponseEntity<T> exchange(String url, HttpMethod method, Object body, Class<T> responseType,
-			Map<String, String> queryParams, Object... uriVariables) {
+			Map<String, String> queryParams, Map<String, Object> pathParams) {
 
 		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(url);
 
@@ -127,7 +128,7 @@ public class RestApiClient {
 		}
 
 		// 最終的にURIを取得
-		URI uri = builder.buildAndExpand(uriVariables) // パスパラメータ設定
+		URI uri = builder.buildAndExpand(pathParams != null ? pathParams : Collections.emptyMap()) // パスパラメータ設定
 				.encode() // URIエンコード
 				.toUri();
 
@@ -156,7 +157,7 @@ public class RestApiClient {
 	 * @return responseTypeに指定した型のボディを保持するResponseEntity
 	 */
 	public <T> ResponseEntity<T> exchange(String url, HttpMethod method, Object body, ParameterizedTypeReference<T> responseType,
-			Map<String, String> queryParams, Object... uriVariables) {
+			Map<String, String> queryParams, Map<String, Object> pathParams) {
 
 		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(url);
 
@@ -168,7 +169,7 @@ public class RestApiClient {
 		}
 
 		// 最終的にURIを取得
-		URI uri = builder.buildAndExpand(uriVariables) // パスパラメータ設定
+		URI uri = builder.buildAndExpand(pathParams != null ? pathParams : Collections.emptyMap()) // パスパラメータ設定
 				.encode() // URIエンコード
 				.toUri();
 

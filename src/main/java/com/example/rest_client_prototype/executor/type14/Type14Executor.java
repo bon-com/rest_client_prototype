@@ -20,13 +20,13 @@ public class Type14Executor {
 			var req = new Resource("4", "パスタ", null);
 			restApiClient.exchange(
 					"http://localhost:8080/rest_prototype/type2/create",
-					HttpMethod.POST, req, Void.class, null, new Object[0]);
+					HttpMethod.POST, req, Void.class, null, null);
 
 			// 値が設定されないケース
 			var req2 = new Resource2("5", "たらこ", null);
 			restApiClient.exchange(
 					"http://localhost:8080/rest_prototype/type2/create",
-					HttpMethod.POST, req2, Void.class, null, new Object[0]);
+					HttpMethod.POST, req2, Void.class, null, null);
 		}
 	}
 }

@@ -1,5 +1,7 @@
 package com.example.rest_client_prototype.executor.type13;
 
+import java.util.Map;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.client.HttpClientErrorException;
@@ -18,8 +20,9 @@ public class Type13Executor {
 
 			try {
 				// エラーが発生するリクエスト
+				Map<String, Object> pathParams = Map.of("id", "6");
 				restApiClient.exchange("http://localhost:8080/rest_prototype/type9/{id}",
-						HttpMethod.GET, null, String.class, null, new Object[] { "6" }); 
+						HttpMethod.GET, null, String.class, null, pathParams); 
 			} catch (HttpClientErrorException e) {
 				// 4xx系エラー（クライアントエラー）
 				System.err.println("ステータスコード: " + e.getStatusCode());
@@ -29,7 +32,7 @@ public class Type13Executor {
 			try {
 				// エラーが発生するリクエスト
 				restApiClient.exchange("http://localhost:8080/rest_prototype/type10/error",
-						HttpMethod.GET, null, Void.class, null, new Object[] {}); 
+						HttpMethod.GET, null, Void.class, null, null); 
 			} catch (HttpServerErrorException e) {
 				// 5xx系エラー（サーバーエラー）
 				System.err.println("ステータスコード: " + e.getStatusCode());
