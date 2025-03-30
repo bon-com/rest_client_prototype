@@ -112,17 +112,17 @@ public class RestApiClient {
 	 * @param body リクエストボディ
 	 * @param responseType レスポンスの型
 	 * @param queryParams クエリパラメータマップ
-	 * @param uriVariables パスパラメータ可変長
+	 * @param uriVariables パスパラメータマップ
 	 * @return responseTypeに指定した型のボディを保持するResponseEntity
 	 */
 	public <T> ResponseEntity<T> exchange(String url, HttpMethod method, Object body, Class<T> responseType,
-			Map<String, String> queryParams, Map<String, Object> pathParams) {
+			Map<String, Object> queryParams, Map<String, Object> pathParams) {
 
 		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(url);
 
 		// クエリパラメータ設定
 		if (queryParams != null) {
-			for (Map.Entry<String, String> entry : queryParams.entrySet()) {
+			for (Map.Entry<String, Object> entry : queryParams.entrySet()) {
 				builder.queryParam(entry.getKey(), entry.getValue());
 			}
 		}
@@ -153,17 +153,17 @@ public class RestApiClient {
 	 * @param body リクエストボディ
 	 * @param responseType レスポンスの型 リストやマップなどジェネリクスを含むケース
 	 * @param queryParams クエリパラメータマップ
-	 * @param uriVariables パスパラメータ可変長
+	 * @param pathParams パスパラメータマップ
 	 * @return responseTypeに指定した型のボディを保持するResponseEntity
 	 */
 	public <T> ResponseEntity<T> exchange(String url, HttpMethod method, Object body, ParameterizedTypeReference<T> responseType,
-			Map<String, String> queryParams, Map<String, Object> pathParams) {
+			Map<String, Object> queryParams, Map<String, Object> pathParams) {
 
 		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(url);
 
 		// クエリパラメータ設定
 		if (queryParams != null) {
-			for (Map.Entry<String, String> entry : queryParams.entrySet()) {
+			for (Map.Entry<String, Object> entry : queryParams.entrySet()) {
 				builder.queryParam(entry.getKey(), entry.getValue());
 			}
 		}
